@@ -26,7 +26,7 @@ $corePreloads = [
 
 foreach( $corePreloads as $file )
 {
-	require_once('src/' . $file);
+	require_once 'src/' . $file;
 }
 
 // class autoloader
