@@ -1,5 +1,12 @@
 <?php
 
+// dev 
+error_reporting(E_ALL | E_STRICT);
+ini_set('display_errors', 1);
+ini_set('html_errors', 0);
+
+
+
 
 // setlocale(LC_ALL, 'fr_FR.UTF-8');
 
