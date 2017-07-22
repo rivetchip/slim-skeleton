@@ -1,0 +1,3 @@
+[submodule "src/Slim"]
+	path = src/Slim
+	url = https://github.com/rivetchip/Slim.git
