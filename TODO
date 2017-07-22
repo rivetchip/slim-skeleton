@@ -1,0 +1,51 @@
+
+
+=== REQUEST/RESPONSE ===
+
+- input() getInput() setInput() , tout est mixé, on ne sait plus si c'est un get ou un set
+
+- $this->method = $this->filterMethod($method); exeption ! avant le catch par Slim
+
+- request - requestInterface pas forcément facile à lire ;
+
+- mettre des attributes() dans la request/response afin d'y accéder via middle ware ??
+
+
+
+=== SLIM ===
+
+- todo: supprimer la possibilité d'avoir un sous-dossier ?
+
+- todo: quand on précise une route avec un callab,e puis bindTo avec le resolver,
+- ça prend le (this) de la route, et pas de slim
+
+
+- VSCODE : merges : choisir les merges, valider le "changes" dans l'onglet git,
+- puis voir les modifs s'il y en a, au cas où certains bouts de codes se seraient rajoutés
+
+- Almost no overhead => 2500+ requests/second ( slim )
+
+- return preg_replace_callback('/(:\w+)/', array(&$this, 'substituteFilter'), $this->url);
+
+- middleswares : add() : faut-il resolver les callable au moment de l'appel à la function ou plutot en defer ?
+
+- $request = self::createRequestFromFactory($_GET, $_POST, array(), $_COOKIE, $_FILES, $_SERVER);
+
+
+
+
+=== OTHERS ===
+
+
+-~{([^}]+)}~
+
+- git merge --no-ff upstream/3.x -s recursive -Xrename-threshold=5%
+
+- use functions instead of controllers ?
+
+
+- create table 'logs' piwik-like things to do
+
+- event system
+
+- ROUTE GROUP -> APP
