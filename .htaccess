@@ -1,0 +1,81 @@
+
+# Encoding
+AddDefaultCharset UTF-8
+DefaultLanguage fr-FR
+
+
+# Directory listing
+Options -Indexes
+Options +FollowSymLinks
+
+<Files *.php>
+    Require all denied
+</Files>
+
+<Files index.php>
+    Require all granted
+</Files>
+
+
+<ifModule mod_headers.c>
+
+    # Enable CORS limitation
+    Header set Access-Control-Allow-Origin %{SERVER_NAME}e
+    Header set Access-Control-Allow-Headers "X-Requested-With, Content-Type, Accept, Origin, Authorization"
+    Header set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+    
+    # prevent site from being loaded in an iframe on another site
+    # you will need to remove this one if you want to allow external iframes
+    Header always append X-Frame-Options SAMEORIGIN 
+
+    # to prevent cross site scripting (IE8+ proprietary)
+    Header set X-XSS-Protection "1; mode=block"
+
+    # prevent mime-based attacks via content sniffing (IE+Chrome)
+    # Header set X-Content-Type-Options "nosniff" 
+</ifModule>
+
+
+<IfModule mod_php5.c>
+    # Override a few PHP settings that can't be changed at runtime
+    php_flag magic_quotes_gpc     off
+    php_flag magic_quotes_sybase  off
+    php_flag register_globals     off
+</IfModule>
+
+
+# App need mod rewrite
+
+<IfModule mod_rewrite.c>
+
+    RewriteEngine On
+    #RewriteBase /public/
+
+    # if only want to allow HTTPS
+    # RewriteCond %{HTTPS} !on
+    # RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Set an environment variable so the app can detect if rewrite active
+    <IfModule mod_env.c>
+        SetEnv SERVER_MOD_REWRITE On
+    </IfModule>
+
+    # Exclude Lets Encrypt
+    RewriteRule "(^|/)\.(?!well-known)" - [F]
+
+    # Exclude home page from rewriting
+    # RewriteRule ^$ - [L]
+
+    # redirect trailing slashes if not a folder
+    # RewriteCond %{REQUEST_FILENAME} !-d
+    # RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+    # exclude files / directory
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # handle front controller
+    RewriteRule ^ index.php [QSA,L]
+    # RewriteRule ^(.*)$ index.php?uri=$1 [L,QSA]
+
+</IfModule>
