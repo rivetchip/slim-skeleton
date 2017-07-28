@@ -31,6 +31,8 @@
 
 - $request = self::createRequestFromFactory($_GET, $_POST, array(), $_COOKIE, $_FILES, $_SERVER);
 
+- $request : parseUploadedFiles() utiliser les names de PHp et pas faire de foreach sur cuex existants.
+
 
 
 
