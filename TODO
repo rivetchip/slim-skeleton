@@ -30,6 +30,11 @@
 
 - $request : parseUploadedFiles() utiliser les names de PHp et pas faire de foreach sur cuex existants.
 
+- errors handlers : utiliser un seul array de tout les error handlers, et pas un Notfound, notAllowed, etc...
+
+- error handler : supprimer les renderer, qui ne servent à rien + supprimer la function extraRenderes() inutile...
+
+
 
 === ROUTER ===
 
