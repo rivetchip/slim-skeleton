@@ -4,10 +4,9 @@
 
 - $this->method = $this->filterMethod($method); exeption ! avant le catch par Slim
 
-- request - requestInterface pas forcément facile à lire ;
-
 - mettre des attributes() dans la request/response afin d'y accéder via middle ware ??
 
+- bug upload array files avec des inputs de type : <input type="file" name="my-form[details][avatar]" />
 
 
 === SLIM ===
@@ -31,6 +30,11 @@
 
 - $request : parseUploadedFiles() utiliser les names de PHp et pas faire de foreach sur cuex existants.
 
+
+=== ROUTER ===
+
+- trouver un moyen si l'on délcare les mêmes url, mais pas mêmes methodes : map('get',url_1) map('post',url_1)
+ou alors utiliser des uri site/path/create site/path/delete plutôt
 
 
 
