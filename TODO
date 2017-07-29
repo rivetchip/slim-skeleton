@@ -2,8 +2,6 @@
 
 === REQUEST/RESPONSE ===
 
-- input() getInput() setInput() , tout est mixé, on ne sait plus si c'est un get ou un set
-
 - $this->method = $this->filterMethod($method); exeption ! avant le catch par Slim
 
 - request - requestInterface pas forcément facile à lire ;
