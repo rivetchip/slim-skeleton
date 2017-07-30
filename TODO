@@ -4,12 +4,19 @@
 
 - $this->method = $this->filterMethod($method); exeption ! avant le catch par Slim
 
-- mettre des attributes() dans la request/response afin d'y accéder via middle ware ??
+- mettre des attributes() dans la request/response afin d'y accéder via middle ware ?? ( PSR 7 HTTP )
 
 - bug upload array files avec des inputs de type : <input type="file" name="my-form[details][avatar]" />
 
+- mettre des nohtml lors que l'on affiche les exceptions, ça provient du client, donc potentiellement faillible
+
+- error handlers : tester sans contentType ou avec un faux se qu'il se passe
+
+
 
 === SLIM ===
+
+- FIXME: Callable function type-hint
 
 - todo: supprimer la possibilité d'avoir un sous-dossier ?
 
@@ -43,7 +50,10 @@ ou alors utiliser des uri site/path/create site/path/delete plutôt
 
 
 
-=== OTHERS ===
+
+=== LATER / PAS URGENT ===
+
+- error handler : renderMessage , mettre sous forme de table, de cette manère la class child peut ajouter  des content-types à la volée
 
 
 -~{([^}]+)}~
