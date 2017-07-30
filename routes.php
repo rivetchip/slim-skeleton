@@ -16,6 +16,8 @@ return [
 
     'invoke' => [['get','post'], '/invoke', \App\Test::class],
 
-    'upload' => [['get','post'], '/upload', '\App\Test@upload']
+    'upload' => [['get','post'], '/upload', '\App\Test@upload'],
+
+    'exception' =>['get', '/exception', '\App\Test@throwexception']
 ];
 

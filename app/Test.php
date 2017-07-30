@@ -5,10 +5,12 @@ namespace App;
 use Slim\Http\Interfaces\RequestInterface as Request;
 use Slim\Http\Interfaces\ResponseInterface as Response;
 
+use Exception;
+
 
 class Test {
 
-    public function __construct( $container = [] )
+    public function __construct( array $container = [] )
     {
         
     }
@@ -58,6 +60,11 @@ class Test {
         }
 
         return render('upload');
+    }
+
+    public function throwexception()
+    {
+        throw new Exception('oh oh!');
     }
 
 
