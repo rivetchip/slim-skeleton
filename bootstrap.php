@@ -15,7 +15,6 @@ use Slim\Slim as SlimApp;
 use Database\DatabaseManager;
 
 
-
 // session
 
 session_start();

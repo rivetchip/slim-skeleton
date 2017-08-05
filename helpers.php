@@ -1,7 +1,5 @@
 <?php
 
-use Slim\Slim as SlimApp;
-
 
 function write( $response, $output )
 {
@@ -137,7 +135,7 @@ function event( $event, $callback = null )
     }
     elseif(isset($events[$event])) // fire a callback
     {
-        $result = $callback;
+        $result = $callback; // value passed thru
 
 		foreach( $events[$event] as $function )
 		{

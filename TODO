@@ -18,10 +18,8 @@
 
 - FIXME: Callable function type-hint
 
-- todo: supprimer la possibilité d'avoir un sous-dossier ?
-
 - todo: quand on précise une route avec un callab,e puis bindTo avec le resolver,
-- ça prend le (this) de la route, et pas de slim
+- ça prend le (this) de la route, et pas de slim, exemple: si on veut passer un container dans unce classe
 
 
 - VSCODE : merges : choisir les merges, valider le "changes" dans l'onglet git,
@@ -35,18 +33,16 @@
 
 - $request = self::createRequestFromFactory($_GET, $_POST, array(), $_COOKIE, $_FILES, $_SERVER);
 
-- $request : parseUploadedFiles() utiliser les names de PHp et pas faire de foreach sur cuex existants.
+- $request : parseUploadedFiles() utiliser les names de PHp et pas faire de foreach sur ceux existants.
 
 - errors handlers : utiliser un seul array de tout les error handlers, et pas un Notfound, notAllowed, etc...
-
-- error handler : supprimer les renderer, qui ne servent à rien + supprimer la function extraRenderes() inutile...
 
 
 
 === ROUTER ===
 
 - trouver un moyen si l'on délcare les mêmes url, mais pas mêmes methodes : map('get',url_1) map('post',url_1)
-ou alors utiliser des uri site/path/create site/path/delete plutôt
+ou alors utiliser des uri site/page/create site/page/delete plutôt
 
 
 
